@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CSVTools {
@@ -38,7 +37,6 @@ public class CSVTools {
             System.out.println(e.getMessage());
             return false;
         }
-
     }
 
 
@@ -57,6 +55,7 @@ public class CSVTools {
         return data.toString().trim();
     }
 
+
     //alt load
     public static String read(File file) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -66,7 +65,6 @@ public class CSVTools {
             while ((str = reader.readLine()) != null) {
                 data.append(str).append("\n");
             }
-
             return data.toString().replaceAll(";", " ");
         }
         
@@ -74,5 +72,4 @@ public class CSVTools {
             return e.getMessage();
         }
     }
-
 }
